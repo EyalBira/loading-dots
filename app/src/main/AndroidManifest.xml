@@ -1,4 +1,4 @@
-<manifest package="com.github.eyalbira.loadingdots"
+<manifest package="com.eyalbira.loadingdots"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application>

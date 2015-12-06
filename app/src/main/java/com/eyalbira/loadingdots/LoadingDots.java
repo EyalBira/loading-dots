@@ -1,4 +1,4 @@
-package com.github.eyalbira.loadingdots;
+package com.eyalbira.loadingdots;
 
 import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
