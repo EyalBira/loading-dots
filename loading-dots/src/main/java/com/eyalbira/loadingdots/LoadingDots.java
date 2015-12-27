@@ -164,7 +164,7 @@ public class LoadingDots extends LinearLayout {
     }
 
     private void startAnimationIfAttached() {
-        if (mIsAttachedToWindow) {
+        if (mIsAttachedToWindow && !mAnimation.isRunning()) {
             mAnimation.start();
         }
     }
@@ -180,6 +180,9 @@ public class LoadingDots extends LinearLayout {
             // We already have an animation
             return;
         }
+        calculateCachedValues();
+        initializeDots(getContext());
+
         mAnimation = ValueAnimator.ofInt(0, mLoopDuration);
         mAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -225,7 +228,7 @@ public class LoadingDots extends LinearLayout {
 
     public final void startAnimation() {
         if (mAnimation != null && mAnimation.isRunning()) {
-            // We already running
+            // We are already running
             return;
         }
 
@@ -235,12 +238,14 @@ public class LoadingDots extends LinearLayout {
 
     public final void stopAnimation() {
         if (mAnimation != null) {
-            mAnimation.cancel();
+            mAnimation.end();
             mAnimation = null;
         }
     }
 
     private void calculateCachedValues() {
+        verifyNotRunning();
+
         // The offset is the time delay between dots start animation
         int startOffset = (mLoopDuration - (mJumpDuration + mLoopStartDelay)) / (mDotsCount - 1);
 
@@ -259,7 +264,16 @@ public class LoadingDots extends LinearLayout {
         }
     }
 
+    private void verifyNotRunning() {
+        if (mAnimation != null) {
+            throw new IllegalStateException("Can't change properties while animation is running!");
+        }
+    }
+
     private void initializeDots(Context context) {
+        verifyNotRunning();
+        removeAllViews();
+
         // Create the dots
         mDots = new ArrayList<>(mDotsCount);
         LayoutParams dotParams = new LayoutParams(mDotSize, mDotSize);
@@ -275,6 +289,172 @@ public class LoadingDots extends LinearLayout {
                 addView(new View(context), spaceParams);
             }
         }
+    }
+
+    // Setters and getters
+
+    /**
+     * Set AutoPlay to true to play the loading animation automatically when view is attached and visible.
+     * xml: LoadingDots_auto_play
+     * @param autoPlay
+     */
+    public void setAutoPlay(boolean autoPlay) {
+        mAutoPlay = autoPlay;
+    }
+
+    public boolean getAutoPlay() {
+        return mAutoPlay;
+    }
+
+    /**
+     * Set the color to be used for the dots fill color
+     * xml: LoadingDots_dots_color
+     * @param color resolved color value
+     */
+    public void setDotsColor(int color) {
+        verifyNotRunning();
+        mDotsColor = color;
+    }
+
+    /**
+     * Set the color to be used for the dots fill color
+     * xml: LoadingDots_dots_color
+     * @param colorRes color resource
+     */
+    public void setDotsColorRes(int colorRes) {
+        setDotsColor(getContext().getResources().getColor(colorRes));
+    }
+
+    public int getDotsColor() {
+        return mDotsColor;
+    }
+
+    /**
+     * Set the number of dots
+     * xml: LoadingDots_dots_count
+     * @param count dots count
+     */
+    public void setDotsCount(int count) {
+        verifyNotRunning();
+        mDotsCount = count;
+    }
+
+    public int getDotsCount() {
+        return mDotsCount;
+    }
+
+    /**
+     * Set the dots size
+     * xml: LoadingDots_dots_size
+     * @param size size in pixels
+     */
+    public void setDotsSize(int size) {
+        verifyNotRunning();
+        mDotSize = size;
+    }
+
+    /**
+     * Set the dots size
+     * xml: LoadingDots_dots_size
+     * @param sizeRes size resource
+     */
+    public void setDotsSizeRes(int sizeRes) {
+        setDotsSize(getContext().getResources().getDimensionPixelSize(sizeRes));
+    }
+
+    public int getDotsSize() {
+        return mDotSize;
+    }
+
+    /**
+     * Set the space between dots
+     * xml: LoadingDots_dots_space
+     * @param space space in pixels
+     */
+    public void setDotsSpace(int space) {
+        verifyNotRunning();
+        mDotSpace = space;
+    }
+
+    /**
+     * Set the space between dots
+     * xml: LoadingDots_dots_space
+     * @param spaceRes space size resource
+     */
+    public void setDotsSpaceRes(int spaceRes) {
+        setDotsSpace(getContext().getResources().getDimensionPixelSize(spaceRes));
+    }
+
+    public int getDotsSpace() {
+        return mDotSpace;
+    }
+
+    /**
+     * Set the loop duration. This is the duration for the entire animation loop (including start delay)
+     * xml: LoadingDots_loop_duration
+     * @param duration duration in milliseconds
+     */
+    public void setLoopDuration(int duration) {
+        verifyNotRunning();
+        mLoopDuration = duration;
+    }
+
+    public int getLoopDuration() {
+        return mLoopDuration;
+    }
+
+    /**
+     * Set the loop start delay. Each loop will delay the animation by the given value.
+     * xml: LoadingDots_loop_start_delay
+     * @param startDelay delay duration in milliseconds
+     */
+    public void  setLoopStartDelay(int startDelay) {
+        verifyNotRunning();
+        mLoopStartDelay = startDelay;
+    }
+
+    public int getLoopStartDelay() {
+        return mLoopStartDelay;
+    }
+
+    /**
+     * Set the dots jump duration. This is the duration it takes a single dot to complete the jump.
+     * Jump duration starts when the dot first start to rise until it settle back to base location.
+     * xml: LoadingDots_jump_duration
+     * @param jumpDuration
+     */
+    public void setJumpDuraiton(int jumpDuration) {
+        verifyNotRunning();
+        mJumpDuration = jumpDuration;
+    }
+
+    public int getJumpDuration() {
+        return mJumpDuration;
+    }
+
+    /**
+     * Set the jump height of the dots. The entire view will include this height to allow the dots
+     * animation to draw properly. The entire view height will be DotsSize + JumpHeight.
+     * xml: LoadingDots_jump_height
+     * @param height size in pixels
+     */
+    public void setJumpHeight(int height) {
+        verifyNotRunning();
+        mJumpHeight = height;
+    }
+
+    /**
+     * Set the jump height of the dots. The entire view will include this height to allow the dots
+     * animation to draw properly. The entire view height will be DotsSize + JumpHeight.
+     * xml: LoadingDots_jump_height
+     * @param heightRes size resource
+     */
+    public void setJumpHeightRes(int heightRes) {
+        setJumpHeight(getContext().getResources().getDimensionPixelSize(heightRes));
+    }
+
+    public int getJumpHeight() {
+        return mJumpHeight;
     }
 }
 

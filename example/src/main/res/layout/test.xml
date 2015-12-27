@@ -1,281 +1,329 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:id="@+id/root"
-              android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:orientation="vertical"
               android:padding="30dp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:gravity="bottom"
-        >
-        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="6dp"
-            android:text="Out of the box:"/>
+            android:padding="8dp"
+            android:text="START"
+            android:textSize="8dp"/>
 
-        <com.eyalbira.loadingdots.LoadingDots
+        <Button
+            android:id="@+id/stop"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="STOP"
+            android:textSize="8dp"/>
+
+        <Button
+            android:id="@+id/add_programmatically"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="ADD LOADER PROGRAMMATICALLY"
+            android:textSize="8dp"/>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:gravity="bottom"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="6dp"
-            android:text="dots_count:"/>
+        android:id="@+id/root"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <com.eyalbira.loadingdots.LoadingDots
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:LoadingDots_dots_count="2"/>
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="3dp"
-            android:layout_marginLeft="3dp"
-            android:text="|"/>
+            android:layout_height="60dp"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            >
 
-        <com.eyalbira.loadingdots.LoadingDots
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="Out of the box:"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:LoadingDots_dots_count="5"/>
+            android:layout_height="60dp"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="dots_count:"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:LoadingDots_dots_count="2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:text="|"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:LoadingDots_dots_count="5"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="dots_color:"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:LoadingDots_dots_color="@android:color/holo_blue_light"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:text="|"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:LoadingDots_dots_color="@android:color/holo_red_light"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="dots_size:"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:LoadingDots_dots_size="3dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:text="|"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:LoadingDots_dots_size="20dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="dots_space:"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:LoadingDots_dots_space="0dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:text="|"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:LoadingDots_dots_space="10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="jump_height:"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:LoadingDots_jump_height="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:text="|"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:LoadingDots_jump_height="25dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="jump_duration:"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:LoadingDots_jump_duration="200"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:text="|"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:LoadingDots_jump_duration="450"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="loop_duration:"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:LoadingDots_jump_duration="200"
+                app:LoadingDots_loop_duration="300"
+                app:LoadingDots_loop_start_delay="50"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:text="|"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:LoadingDots_jump_duration="800"
+                app:LoadingDots_loop_duration="1200"
+                app:LoadingDots_loop_start_delay="200"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="loop_start_delay:"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:LoadingDots_loop_start_delay="0"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:text="|"/>
+
+            <com.eyalbira.loadingdots.LoadingDots
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:LoadingDots_loop_duration="1200"
+                app:LoadingDots_loop_start_delay="600"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:gravity="bottom"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="6dp"
-            android:text="dots_color:"/>
-
-        <com.eyalbira.loadingdots.LoadingDots
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:LoadingDots_dots_color="@android:color/holo_blue_light"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="3dp"
-            android:layout_marginLeft="3dp"
-            android:text="|"/>
-
-        <com.eyalbira.loadingdots.LoadingDots
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:LoadingDots_dots_color="@android:color/holo_red_light"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:gravity="bottom"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="6dp"
-            android:text="dots_size:"/>
-
-        <com.eyalbira.loadingdots.LoadingDots
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:LoadingDots_dots_size="3dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="3dp"
-            android:layout_marginLeft="3dp"
-            android:text="|"/>
-
-        <com.eyalbira.loadingdots.LoadingDots
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:LoadingDots_dots_size="20dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:gravity="bottom"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="6dp"
-            android:text="dots_space:"/>
-
-        <com.eyalbira.loadingdots.LoadingDots
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:LoadingDots_dots_space="0dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="3dp"
-            android:layout_marginLeft="3dp"
-            android:text="|"/>
-
-        <com.eyalbira.loadingdots.LoadingDots
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:LoadingDots_dots_space="10dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:gravity="bottom"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="6dp"
-            android:text="jump_height:"/>
-
-        <com.eyalbira.loadingdots.LoadingDots
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:LoadingDots_jump_height="4dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="3dp"
-            android:layout_marginLeft="3dp"
-            android:text="|"/>
-
-        <com.eyalbira.loadingdots.LoadingDots
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:LoadingDots_jump_height="25dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:gravity="bottom"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="6dp"
-            android:text="jump_duration:"/>
-
-        <com.eyalbira.loadingdots.LoadingDots
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:LoadingDots_jump_duration="200"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="3dp"
-            android:layout_marginLeft="3dp"
-            android:text="|"/>
-
-        <com.eyalbira.loadingdots.LoadingDots
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:LoadingDots_jump_duration="450"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:gravity="bottom"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="6dp"
-            android:text="loop_duration:"/>
-
-        <com.eyalbira.loadingdots.LoadingDots
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:LoadingDots_loop_duration="300"
-            app:LoadingDots_jump_duration="200"
-            app:LoadingDots_loop_start_delay="50"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="3dp"
-            android:layout_marginLeft="3dp"
-            android:text="|"/>
-
-        <com.eyalbira.loadingdots.LoadingDots
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:LoadingDots_loop_duration="1200"
-            app:LoadingDots_jump_duration="800"
-            app:LoadingDots_loop_start_delay="200"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:gravity="bottom"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="6dp"
-            android:text="loop_start_delay:"/>
-
-        <com.eyalbira.loadingdots.LoadingDots
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:LoadingDots_loop_start_delay="0"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="3dp"
-            android:layout_marginLeft="3dp"
-            android:text="|"/>
-
-        <com.eyalbira.loadingdots.LoadingDots
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:LoadingDots_loop_duration="1200"
-            app:LoadingDots_loop_start_delay="600"/>
-
-    </LinearLayout>
-
-
 </LinearLayout>
