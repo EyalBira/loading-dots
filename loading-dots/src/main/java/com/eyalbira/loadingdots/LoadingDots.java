@@ -1,4 +1,4 @@
-package es.kukutestudio.grup.util;
+package com.eyalbira.loadingdots
 
 import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
@@ -18,8 +18,6 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import es.kukutestudio.grup.R;
 
 /**
  *
@@ -62,11 +60,11 @@ public class LoadingDots extends LinearLayout {
     private int[] mDotsJumpUpEndTime;
     private int[] mDotsJumpDownEndTime;
 
-    int primero        = Color.parseColor("#ff3b59");
-    int segundo        = Color.parseColor("#ff850d");
-    int tercero        = Color.parseColor("#ffc20d");
-    int cuarto        = Color.parseColor("#4dde92");
-    int quinto        = Color.parseColor("#3dc4fb");
+    int firstDot        = Color.parseColor("#ff3b59");
+    int secondDot       = Color.parseColor("#ff850d");
+    int thirdDot        = Color.parseColor("#ffc20d");
+    int fourthDot       = Color.parseColor("#4dde92");
+    int fifthDot        = Color.parseColor("#3dc4fb");
     public LoadingDots(Context context) {
         super(context);
         init(null);
@@ -287,7 +285,7 @@ public class LoadingDots extends LinearLayout {
         LayoutParams dotParams = new LayoutParams(mDotSize, mDotSize);
         LayoutParams spaceParams = new LayoutParams(mDotSpace, mDotSize);
 
-        ArrayList<Integer> colores = new ArrayList<>(Arrays.asList(primero,segundo,tercero,cuarto,quinto) );
+        ArrayList<Integer> colores = new ArrayList<>(Arrays.asList(firstDot,secondDot,thirdDot,fourthDot,fifthDot) );
 
         for (int i = 0; i < mDotsCount; i++) {
             // Add dot
