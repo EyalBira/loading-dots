@@ -1,8 +1,8 @@
-#LoadingDots for Android
+# LoadingDots for Android
 
 Customizable bouncing dots view for smooth loading effect. Mostly used in chat bubbles to indicate the other person is typing.
 
-##Features
+## Features
 
  - LoadingDots animated view
  - Use in xml
@@ -10,17 +10,17 @@ Customizable bouncing dots view for smooth loading effect. Mostly used in chat b
  - Customize animation behavior
  - Customize animation duration
 
-##Demo
+## Demo
 
 ![](screens/demo.gif)
 
-##Import
+## Import
 
  ```xml
     compile 'com.eyalbira.loadingdots:loading-dots:1.0.2'
  ```
 
-##Usage
+## Usage
 
 For basic usage, simply add to layout xml:
 
