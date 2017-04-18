@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -59,6 +60,11 @@ public class LoadingDots extends LinearLayout {
     private int[] mDotsJumpUpEndTime;
     private int[] mDotsJumpDownEndTime;
 
+    int firstDot        = Color.parseColor("#ff3b59");
+    int secondDot       = Color.parseColor("#ff850d");
+    int thirdDot        = Color.parseColor("#ffc20d");
+    int fourthDot       = Color.parseColor("#4dde92");
+    int fifthDot        = Color.parseColor("#3dc4fb");
     public LoadingDots(Context context) {
         super(context);
         init(null);
@@ -156,10 +162,10 @@ public class LoadingDots extends LinearLayout {
         }
     }
 
-    private View createDotView(Context context) {
+    private View createDotView(Context context, int color) {
         ImageView dot = new ImageView(context);
         dot.setImageResource(R.drawable.loading_dots_dot);
-        ((GradientDrawable) dot.getDrawable()).setColor(mDotsColor);
+        ((GradientDrawable) dot.getDrawable()).setColor(color);
         return dot;
     }
 
@@ -278,9 +284,13 @@ public class LoadingDots extends LinearLayout {
         mDots = new ArrayList<>(mDotsCount);
         LayoutParams dotParams = new LayoutParams(mDotSize, mDotSize);
         LayoutParams spaceParams = new LayoutParams(mDotSpace, mDotSize);
+
+        ArrayList<Integer> colores = new ArrayList<>(Arrays.asList(firstDot,secondDot,thirdDot,fourthDot,fifthDot) );
+
         for (int i = 0; i < mDotsCount; i++) {
             // Add dot
-            View dotView = createDotView(context);
+
+            View dotView = createDotView(context,colores.get(i));
             addView(dotView, dotParams);
             mDots.add(dotView);
 
