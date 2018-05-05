@@ -17,7 +17,7 @@ Customizable bouncing dots view for smooth loading effect. Mostly used in chat b
 ## Import
 
  ```xml
-    compile 'com.eyalbira.loadingdots:loading-dots:1.0.2'
+    implementation 'com.eyalbira.loadingdots:loading-dots:1.0.2'
  ```
 
 ## Usage
